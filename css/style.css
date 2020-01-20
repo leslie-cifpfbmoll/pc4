@@ -9,49 +9,49 @@ body {
           justify-content: center;
 }
 
-body div {
+body .map {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 600px;
 }
 
-body div img {
+body .map img {
   width: 100%;
 }
 
-body div .palma, body div .calvia, body div .andratx, body div .llucmajor, body div .manacor {
+body .map .palma, body .map .calvia, body .map .andratx, body .map .llucmajor, body .map .manacor {
   border-radius: 50%;
   width: 25px;
   height: 25px;
   background: #f8572e;
   position: relative;
-  top: 270px;
-  right: 435px;
+  top: 50%;
+  right: 72.5%;
   color: #f8572e;
 }
 
-body div .calvia {
-  top: 300px;
-  right: 540px;
+body .map .calvia {
+  top: 56.66667%;
+  right: 90%;
 }
 
-body div .andratx {
-  top: 270px;
-  right: 615px;
+body .map .andratx {
+  top: 51.66667%;
+  right: 102.5%;
 }
 
-body div .llucmajor {
-  top: 350px;
-  right: 445px;
+body .map .llucmajor {
+  top: 58.33333%;
+  right: 74.16667%;
 }
 
-body div .manacor {
-  top: 290px;
-  right: 275px;
+body .map .manacor {
+  top: 48.33333%;
+  right: 42.5%;
 }
 
-body div .text, body div #palma, body div #calvia, body div #andratx, body div #llucmajor, body div #manacor {
+body .map .text, body .map #palma, body .map #calvia, body .map #andratx, body .map #llucmajor, body .map #manacor {
   display: none;
   background-color: white;
   border: 1px solid #f8572e;
@@ -63,28 +63,93 @@ body div .text, body div #palma, body div #calvia, body div #andratx, body div #
   position: relative;
 }
 
-body div #palma {
-  top: 239px;
-  right: 574px;
+body .map #palma {
+  top: 44.83333%;
+  right: 95.66667%;
 }
 
-body div #calvia {
-  top: 270px;
-  right: 655px;
+body .map #calvia {
+  top: 51.66667%;
+  right: 109.16667%;
 }
 
-body div #andratx {
-  top: 240px;
-  right: 714px;
+body .map #andratx {
+  top: 45%;
+  right: 119%;
 }
 
-body div #llucmajor {
-  top: 320px;
-  right: 504px;
+body .map #llucmajor {
+  top: 53.33333%;
+  right: 84%;
 }
 
-body div #manacor {
+body .map #manacor {
+  top: 43.33333%;
+  right: 51.33333%;
+}
+
+.tiempo_palma, .tiempo_calvia, .tiempo_andratx, .tiempo_llucmajor, .tiempo_manacor {
+  background-color: white;
+  border: 1px solid #f8572e;
+  position: relative;
+  top: 211px;
+  right: 466px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 45px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5px;
+  text-align: center;
+  display: none;
+}
+
+.tiempo_palma .foto, .tiempo_calvia .foto, .tiempo_andratx .foto, .tiempo_llucmajor .foto, .tiempo_manacor .foto {
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 30px;
+}
+
+.tiempo_palma .foto img, .tiempo_calvia .foto img, .tiempo_andratx .foto img, .tiempo_llucmajor .foto img, .tiempo_manacor .foto img {
+  width: 100%;
+}
+
+.tiempo_palma .foto span, .tiempo_calvia .foto span, .tiempo_andratx .foto span, .tiempo_llucmajor .foto span, .tiempo_manacor .foto span {
+  font-size: 1px;
+}
+
+.tiempo_palma .maxmin, .tiempo_calvia .maxmin, .tiempo_andratx .maxmin, .tiempo_llucmajor .maxmin, .tiempo_manacor .maxmin {
+  width: 80px;
+}
+
+.tiempo_calvia {
+  top: 250px;
+  right: 540px;
+}
+
+.tiempo_andratx {
+  top: 220px;
+  right: 615px;
+}
+
+.tiempo_llucmajor {
   top: 260px;
-  right: 318px;
+  right: 369px;
+}
+
+.tiempo_manacor {
+  top: 200px;
+  right: 190px;
+}
+
+@media only screen and (max-width: 725px) {
+  .map {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -38,22 +38,32 @@
                 $("this").css("background-color", "#f8572e");
             });
         });
+
+        function tiempo(nombre) {
+
+            $("#" + nombre).remove();
+            $("#tiempo").remove();
+            clase = "tiempo_" + nombre;
+            $('body').append('<div id="tiempo" class="' + clase + '" > <div class="foto"><img src="img/sol.png" alt="sol"></div></div>');
+            max = 15;
+            min = 10;
+            $("." + clase).append('<div class="maxmin"><span class="max">' + max + '°C</span>| <span class="min">' + min + '°C</span></div>')
+            $("." + clase).fadeIn("slow");
+        }
     </script>
 </head>
 
 <body>
 
     <div class="map">
-        <img src="img/mallorca.png" alt="" usemap="#image-map">
+        <img src="img/mallorca.png" alt="mallorca">
 
-        <div onmouseover="text('Palma')" onmouseout="normal('#palma')" class="palma">......</div>
-        <div onmouseover="text('Calvia')" onmouseout="normal('#calvia')" class="calvia">......</div>
-        <div onmouseover="text('Andratx')" onmouseout="normal('#andratx')" class="andratx">......</div>
-        <div onmouseover="text('Llucmajor')" onmouseout="normal('#llucmajor')" class="llucmajor">......</div>
-        <div onmouseover="text('Manacor')" onmouseout="normal('#manacor')" class="manacor">......</div>
-        <map name="image-map">
-            <area target="_blank" alt="z" href="palma" coords="409,739,53" shape="circle">
-        </map>
+        <div onmouseover="text('Palma')" onclick="tiempo('palma')" onmouseout="normal('#palma')" class="palma">......</div>
+        <div onmouseover="text('Calvia')" onclick="tiempo('calvia')" onmouseout="normal('#calvia')" class="calvia">......</div>
+        <div onmouseover="text('Andratx')" onclick="tiempo('andratx')" onmouseout="normal('#andratx')" class="andratx">......</div>
+        <div onmouseover="text('Llucmajor')" onclick="tiempo('llucmajor')" onmouseout="normal('#llucmajor')" class="llucmajor">......</div>
+        <div onmouseover="text('Manacor')" onclick="tiempo('manacor')" onmouseout="normal('#manacor')" class="manacor">......</div>
+
     </div>
 </body>
 
