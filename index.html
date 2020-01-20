@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- Resposive meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <title>pc4</title>
+    <script>
+        function text(nombre) {
+            clase = "." + nombre;
+            x = $(clase.toLowerCase()).css("right");
+            y = $(clase.toLowerCase()).css("top");
+
+            $(".map").append('<div id="' + nombre.toLowerCase() + '" ></div>');
+            id = "#" + nombre.toLowerCase();
+
+            $(id).text(nombre);
+            $(id).fadeIn("slow");
+
+        }
+
+        function normal(nombre) {
+            $(nombre).remove();
+
+        }
+        $(document).ready(function() {
+
+            $(".map div").hover(function() {
+                $("this").css("background-color", "lightgray");
+            }, function() {
+                $("this").css("background-color", "#f8572e");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="map">
+        <img src="img/mallorca.png" alt="" usemap="#image-map">
+
+        <div onmouseover="text('Palma')" onmouseout="normal('#palma')" class="palma">......</div>
+        <div onmouseover="text('Calvia')" onmouseout="normal('#calvia')" class="calvia">......</div>
+        <div onmouseover="text('Andratx')" onmouseout="normal('#andratx')" class="andratx">......</div>
+        <div onmouseover="text('Llucmajor')" onmouseout="normal('#llucmajor')" class="llucmajor">......</div>
+        <div onmouseover="text('Manacor')" onmouseout="normal('#manacor')" class="manacor">......</div>
+        <map name="image-map">
+            <area target="_blank" alt="z" href="palma" coords="409,739,53" shape="circle">
+        </map>
+    </div>
+</body>
+
+</html>

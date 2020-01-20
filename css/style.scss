@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+body {
+    background-color: #E5F8FD;
+    display: flex;
+    justify-content: center;
+    div {
+        display: flex;
+        width: 600px;
+        img {
+            width: 100%;
+        }
+        .palma {
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            background: #f8572e;
+            position: relative;
+            top: 270px;
+            right: 435px;
+            color: #f8572e;
+        }
+        .calvia {
+            @extend .palma;
+            top: 300px; //63 237
+            right: 540px; //572px  32
+        }
+        .andratx {
+            @extend .palma;
+            top: 270px;
+            right: 615px;
+        }
+        .llucmajor {
+            @extend .palma;
+            top: 350px;
+            right: 445px;
+        }
+        .manacor {
+            @extend .palma;
+            top: 290px;
+            right: 275px;
+        }
+        .text {
+            display: none;
+            background-color: white;
+            border: 1px solid #f8572e;
+            width: auto;
+            height: 15px;
+            border-radius: 7px;
+            padding: 6px;
+            font-family: 'Open Sans', sans-serif;
+            position: relative;
+        }
+        #palma {
+            @extend .text;
+            top: 239px;
+            right: 574px;
+        }
+        #calvia {
+            @extend .text;
+            top: 270px;
+            right: 655px;
+        }
+        #andratx {
+            @extend .text;
+            top: 240px;
+            right: 714px;
+        }
+        #llucmajor {
+            @extend .text;
+            top: 320px;
+            right: 504px;
+        }
+        #manacor {
+            @extend .text;
+            top: 260px;
+            right: 318px;
+        }
+    }
+}
