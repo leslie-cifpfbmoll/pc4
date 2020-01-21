@@ -1,0 +1,36 @@
+{
+    "tiempo": [{
+            "id": 12345671,
+            "municipio": "palma",
+            "max": "15",
+            "min": "10",
+            "img": "nublado"
+        },
+        {
+            "id": 12345672,
+            "municipio": "andratx",
+            "max": "12",
+            "min": "7",
+            "img": "sol"
+        }, {
+            "id": 12345673,
+            "municipio": "calvia",
+            "max": "10",
+            "min": "5",
+            "img": "sol"
+        }, {
+            "id": 12345674,
+            "municipio": "llucmajor",
+            "max": "12",
+            "min": "18",
+            "img": "nublado"
+        }, {
+            "id": 12345675,
+            "municipio": "manacor",
+            "max": "7",
+            "min": "4",
+            "img": "tormenta"
+        }
+    ]
+
+}

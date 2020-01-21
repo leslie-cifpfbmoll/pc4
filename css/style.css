@@ -102,7 +102,6 @@ body .map #manacor {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 5px;
   text-align: center;
   display: none;
 }
@@ -124,7 +123,8 @@ body .map #manacor {
 }
 
 .tiempo_palma .maxmin, .tiempo_calvia .maxmin, .tiempo_andratx .maxmin, .tiempo_llucmajor .maxmin, .tiempo_manacor .maxmin {
-  width: 80px;
+  width: 80px !important;
+  font-size: small;
 }
 
 .tiempo_calvia {

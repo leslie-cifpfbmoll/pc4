@@ -39,16 +39,51 @@
             });
         });
 
-        function tiempo(nombre) {
-
+        function inf(max, min, nombre, img) {
             $("#" + nombre).remove();
             $("#tiempo").remove();
             clase = "tiempo_" + nombre;
-            $('body').append('<div id="tiempo" class="' + clase + '" > <div class="foto"><img src="img/sol.png" alt="sol"></div></div>');
-            max = 15;
-            min = 10;
+            $('body').append('<div id="tiempo" class="' + clase + '" > <div class="foto"><img src="img/' + img + '.png" alt=' + img + '></div></div>');
+
             $("." + clase).append('<div class="maxmin"><span class="max">' + max + '°C</span>| <span class="min">' + min + '°C</span></div>')
             $("." + clase).fadeIn("slow");
+        }
+
+        function tiempo(nombre) {
+            var max;
+            var min;
+            $.ajax({
+                // la URL para la petición
+                url: 'http://localhost:3000/tiempo',
+                // especifica si será una petición POST o GET
+                type: 'GET',
+                // el tipo de información que se espera de respuesta
+                dataType: 'json',
+
+                // código a ejecutar si la petición es satisfactoria;
+                // la respuesta es pasada como argumento a la función
+                success: function(data) {
+                    var i;
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].municipio == nombre) {
+
+                            max = data[i].max;
+                            min = data[i].min;
+                            img = data[i].img;
+                            inf(max, min, nombre, img);
+                        }
+
+                    }
+                },
+                // código a ejecutar si la petición falla;
+                // son pasados como argumentos a la función
+                // el objeto de la petición en crudo y código de estatus de la petición
+                error: function(xhr, status) {
+                    alert('error');
+                },
+            });
+
+
         }
     </script>
 </head>
