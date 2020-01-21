@@ -13,6 +13,14 @@
 
     <title>pc4</title>
     <script>
+        $(document).on("click", function(e) {
+            var container = $("#tiempo");
+            if (!container.is(e.target) && container.has(e.target).length === 0 && !$("div").is(e.target)) {
+                //Se ha pulsado en cualquier lado fuera de los elementos contenidos en la variable container
+                $("#tiempo").remove();
+            }
+        });
+
         function text(nombre) {
             clase = "." + nombre;
             x = $(clase.toLowerCase()).css("right");
@@ -30,14 +38,6 @@
             $(nombre).remove();
 
         }
-        $(document).ready(function() {
-
-            $(".map div").hover(function() {
-                $("this").css("background-color", "lightgray");
-            }, function() {
-                $("this").css("background-color", "#f8572e");
-            });
-        });
 
         function inf(max, min, nombre, img) {
             $("#" + nombre).remove();
@@ -46,7 +46,7 @@
             $('body').append('<div id="tiempo" class="' + clase + '" > <div class="foto"><img src="img/' + img + '.png" alt=' + img + '></div></div>');
 
             $("." + clase).append('<div class="maxmin"><span class="max">' + max + '°C</span>| <span class="min">' + min + '°C</span></div>')
-            $("." + clase).fadeIn("slow");
+            $("." + clase).slideToggle();
         }
 
         function tiempo(nombre) {
@@ -66,7 +66,6 @@
                     var i;
                     for (var i = 0; i < data.length; i++) {
                         if (data[i].municipio == nombre) {
-
                             max = data[i].max;
                             min = data[i].min;
                             img = data[i].img;
@@ -82,8 +81,6 @@
                     alert('error');
                 },
             });
-
-
         }
     </script>
 </head>

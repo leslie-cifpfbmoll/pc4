@@ -89,11 +89,12 @@ body .map #manacor {
 }
 
 .tiempo_palma, .tiempo_calvia, .tiempo_andratx, .tiempo_llucmajor, .tiempo_manacor {
-  background-color: white;
   border: 1px solid #f8572e;
+  background-color: #f8572e;
   position: relative;
-  top: 211px;
-  right: 466px;
+  top: 215px;
+  right: 464px;
+  width: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,8 +134,8 @@ body .map #manacor {
 }
 
 .tiempo_andratx {
-  top: 220px;
-  right: 615px;
+  top: 231px;
+  right: 594px;
 }
 
 .tiempo_llucmajor {
@@ -143,8 +144,8 @@ body .map #manacor {
 }
 
 .tiempo_manacor {
-  top: 200px;
-  right: 190px;
+  top: 205px;
+  right: 180px;
 }
 
 @media only screen and (max-width: 725px) {
