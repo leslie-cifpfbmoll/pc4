@@ -8,88 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- script -->
     <script src="js/script.js"></script>
+    <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
-    <title>pc4</title>
     <script>
         $(document).on("click", function(e) {
             var container = $("#tiempo");
-            if (!container.is(e.target) && container.has(e.target).length === 0 && !$("div").is(e.target)) {
-                //Se ha pulsado en cualquier lado fuera de los elementos contenidos en la variable container
+            if (!container.is(e.target) && !$("div").is(e.target)) {
+                //Se ha pulsado en cualquier lado fuera de los elementos
                 $("#tiempo").remove();
             }
         });
-
-        function text(nombre) {
-            clase = "." + nombre;
-            x = $(clase.toLowerCase()).css("right");
-            y = $(clase.toLowerCase()).css("top");
-
-            $(".map").append('<div id="' + nombre.toLowerCase() + '" ></div>');
-            id = "#" + nombre.toLowerCase();
-
-            $(id).text(nombre);
-            $(id).fadeIn("slow");
-
-        }
-
-        function normal(nombre) {
-            $(nombre).remove();
-
-        }
-
-        function inf(max, min, nombre, img) {
-            $("#" + nombre).remove();
-            $("#tiempo").remove();
-            clase = "tiempo_" + nombre;
-            $('body').append('<div id="tiempo" class="' + clase + '" > <div class="foto"><img src="img/' + img + '.png" alt=' + img + '></div></div>');
-
-            $("." + clase).append('<div class="maxmin"><span class="max">' + max + '°C</span>| <span class="min">' + min + '°C</span></div>')
-            $("." + clase).slideToggle();
-        }
-
-        function tiempo(nombre) {
-            var max;
-            var min;
-            $.ajax({
-                // la URL para la petición
-                url: 'http://localhost:3000/tiempo',
-                // especifica si será una petición POST o GET
-                type: 'GET',
-                // el tipo de información que se espera de respuesta
-                dataType: 'json',
-
-                // código a ejecutar si la petición es satisfactoria;
-                // la respuesta es pasada como argumento a la función
-                success: function(data) {
-                    var i;
-                    for (var i = 0; i < data.length; i++) {
-                        if (data[i].municipio == nombre) {
-                            max = data[i].max;
-                            min = data[i].min;
-                            img = data[i].img;
-                            inf(max, min, nombre, img);
-                        }
-
-                    }
-                },
-                // código a ejecutar si la petición falla;
-                // son pasados como argumentos a la función
-                // el objeto de la petición en crudo y código de estatus de la petición
-                error: function(xhr, status) {
-                    alert('error');
-                },
-            });
-        }
     </script>
+
+    <title>pc4</title>
+
 </head>
 
 <body>
-
     <div class="map">
         <img src="img/mallorca.png" alt="mallorca">
-
         <div onmouseover="text('Palma')" onclick="tiempo('palma')" onmouseout="normal('#palma')" class="palma">......</div>
         <div onmouseover="text('Calvia')" onclick="tiempo('calvia')" onmouseout="normal('#calvia')" class="calvia">......</div>
         <div onmouseover="text('Andratx')" onclick="tiempo('andratx')" onmouseout="normal('#andratx')" class="andratx">......</div>
